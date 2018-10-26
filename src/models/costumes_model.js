@@ -5,15 +5,15 @@ const getAllCostumes = async () => {
   return costumes;
 };
 
-const getCostumeById = async (id) => {
-  const costume = await query.getCostumeById(id);
-  return costume;
-}
+const getCostumeById = async id => {
+  const costumeById = await query.getCostumeById(id);
+  return costumeById;
+};
 
-const createCostume = async (costume) => {
-  const costume = await query.createCostume(costume);
-  return costume;
-}
+const createCostume = async costume => {
+  const newCostume = await query.createCostume(costume);
+  return newCostume;
+};
 
 // updateCostume
 // deleteCostume
@@ -22,4 +22,6 @@ module.exports = {
   getAllCostumes,
   getCostumeById,
   createCostume
+  // updateCostume
+  // deleteCostume
 };
