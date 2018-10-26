@@ -1,4 +1,3 @@
-
 exports.seed = function(knex, Promise) {
   // Deletes ALL existing entries
   return knex('costumes')
@@ -8,45 +7,46 @@ exports.seed = function(knex, Promise) {
       return knex('costumes').insert([
         {
           id: 1,
-          name: 'shirt',
-          description: 'Cool Shirt',
-          price: 1500
+          name: 'Reaper',
+          description: 'The closest thing Overwatch has to an Edgelord.',
+          price: 5500
         },
         {
           id: 2,
-          name: 'pants',
-          description: 'Cool Pants',
+          name: 'Baby Shark',
+          description:
+            'Admit it. You heard that song in your head the moment you read the title.',
           price: 2500
         },
         {
           id: 3,
-          name: 'hat',
-          description: 'Cool Hat',
-          price: 1000
+          name: 'Bullet Storm Jonesy',
+          description: 'Ride the Fortnite hype train!',
+          price: 6500
         },
         {
           id: 4,
-          name: 'sweater',
-          description: 'Warm Sweater',
+          name: 'Rainbow Unicorn',
+          description: 'Made for your Instagram.',
           price: 3500
         },
         {
           id: 5,
-          name: 'socks',
-          description: 'Cool Socks',
-          price: 500,
+          name: 'Spider-Man',
+          description: 'Do whatever a spider can!',
+          price: 3500
         },
         {
           id: 6,
-          name: 'watch',
-          description: 'Cool Watch',
+          name: 'Harley Quinn',
+          description: "Daddy's 'Lil Monster.",
           price: 5000
         }
-      ])
+      ]);
     })
     .then(() =>
       knex.raw(
         `SELECT setval('"costumes_id_seq"', (SELECT MAX("id") FROM "costumes"))`
       )
-    )
-}
+    );
+};

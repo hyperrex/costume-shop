@@ -15,13 +15,20 @@ const createCostume = async costume => {
   return newCostume;
 };
 
-// updateCostume
-// deleteCostume
+const updateCostume = async (id, body) => {
+  const updatedCostume = await query.updateCostume(id, body);
+  return updatedCostume;
+};
+
+const deleteCostume = async id => {
+  const deletedCostume = await query.deleteCostume(id);
+  return deletedCostume;
+};
 
 module.exports = {
   getAllCostumes,
   getCostumeById,
-  createCostume
-  // updateCostume
-  // deleteCostume
+  createCostume,
+  updateCostume,
+  deleteCostume
 };

@@ -14,9 +14,9 @@ const getAllCostumes = async (req, res, next) => {
 // getCostumeById
 const getCostumeById = async (req, res, next) => {
   try {
-    const costume = await model.getCostumeById(req.params.id);
-    console.log(costume);
-    return res.status(200).json(costume);
+    const costumeById = await model.getCostumeById(req.params.id);
+    console.log(costumeById);
+    return res.status(200).json(costumeById);
   } catch (error) {
     console.log(error);
   }
@@ -34,12 +34,31 @@ const createCostume = async (req, res, next) => {
 };
 
 // updateCostume req.body
+const updateCostume = async (req, res, next) => {
+  try {
+    const costume = await model.updateCostume(req.params.id, req.body);
+    console.log(costume);
+    return res.status(201).json(costume);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 // deleteCostume
+const deleteCostume = async (req, res, next) => {
+  try {
+    const costume = await model.deleteCostume(req.params.id);
+    console.log(costume);
+    return res.status(201).json(costume);
+  } catch (error) {
+    console.log(error);
+  }
+};
 
 module.exports = {
   getAllCostumes,
   getCostumeById,
-  createCostume
-  // updateCostume
-  // deleteCostume
+  createCostume,
+  updateCostume,
+  deleteCostume
 };
