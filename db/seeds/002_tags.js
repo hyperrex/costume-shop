@@ -9,27 +9,27 @@ exports.seed = function(knex, Promise) {
         {
           id: 1,
           name: 'New',
-          color: 'white'
+          color: '#ffffff'
         },
         {
           id: 2,
           name: 'Adult',
-          color: 'blue'
+          color: '#0000FF'
         },
         {
           id: 3,
           name: 'Sale',
-          color: 'orange'
+          color: '#FFA500'
         },
         {
           id: 4,
           name: 'Clearance',
-          color: 'red'
+          color: '#FF0000'
         },
         {
           id: 5,
           name: 'Child',
-          color: 'green'
+          color: '#00FF00'
         }
       ]);
     })
