@@ -5,7 +5,16 @@ const getAllCostumes = async () => {
 };
 
 const getCostumeById = async id => {
-  return await knex('costumes').where('id', id);
+  return await knex('costumes').where('costumes.id', id).first()
+    .then(result => {
+      return knex('costumes_tags')
+        .join('tags', 'tags.id', '=', 'costumes_tags.tag_id')
+        .where('costume_id', id)
+        .then(tags => {
+          result.tags = tags
+          return result
+      })
+    })
 };
 
 const createCostume = async body => {
