@@ -10,10 +10,10 @@ app.use(bodyParser.json());
 app.use(cors());
 
 const costumesRoutes = require('./src/routes/costumes_routes.js');
-app.use('/costumes', costumesRoutes);
+const tagsRoutes = require('./src/routes/tags_routes.js');
 
-// const tagsRoutes = require('./src/routes/tags_routes.js');
-// app.use('/tags', tagsRoutes);
+app.use('/costumes', costumesRoutes);
+app.use('/tags', tagsRoutes);
 
 /**** Error Handling ****/
 app.all('*', (req, res, next) => res.sendStatus(404));
